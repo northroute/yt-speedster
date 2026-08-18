@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "YouTube Speed Control",
+  "version": "1.0",
+  "description": "Контроль скорости воспроизведения YouTube от 1x до 5x",
+
+  "icons": {
+    "128": "icons/icon128.png"
+  },
+
+  "action": {
+    "default_popup": "popup.html",
+    "default_icon": {
+      "32": "icons/icon128.png"
+    }
+  },
+
+  "content_scripts": [
+    {
+      "matches": ["*://*.youtube.com/*"],
+      "js": ["content.js"],
+      "run_at": "document_idle"
+    }
+  ],
+
+  "permissions": ["activeTab"]
+}
